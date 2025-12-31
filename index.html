@@ -189,37 +189,55 @@
 </footer>
 
 <script>
-async function loadContent(){
+async function loadContent() {
   const res = await fetch("/content");
   const d = await res.json();
 
-  document.getElementById("logoText").textContent = d.logo;
+  // ===== DOM ELEMENTS =====
+  const hero = document.getElementById("heroSection");
+  const heroBadge = document.getElementById("heroBadge");
+  const heroTitle = document.getElementById("heroTitle");
+  const heroSubtitle = document.getElementById("heroSubtitle");
+  const heroBtnPrimary = document.getElementById("heroBtnPrimary");
+  const heroBtnSecondary = document.getElementById("heroBtnSecondary");
+  const heroCardTitle = document.getElementById("heroCardTitle");
+  const heroCardDesc1 = document.getElementById("heroCardDesc1");
+  const heroCardDesc2 = document.getElementById("heroCardDesc2");
 
-  const nav = document.getElementById("navMenu");
-  nav.innerHTML="";
-  d.nav.forEach(n=>{
-    const a=document.createElement("a");
-    a.href=n.href;
-    a.textContent=n.label;
-    nav.appendChild(a);
+  const logoText = document.getElementById("logoText");
+  const navMenu = document.getElementById("navMenu");
+  const destList = document.getElementById("destList");
+
+  const footerTitle = document.getElementById("footerTitle");
+  const footerDesc = document.getElementById("footerDesc");
+  const footerCopy = document.getElementById("footerCopy");
+
+  // ===== HEADER =====
+  logoText.textContent = d.logo;
+
+  navMenu.innerHTML = "";
+  d.nav.forEach(n => {
+    const a = document.createElement("a");
+    a.href = n.href;
+    a.textContent = n.label;
+    navMenu.appendChild(a);
   });
 
-  const hero=document.getElementById("heroSection");
-  hero.style.backgroundImage=`url('${d.hero.background}')`;
+  // ===== HERO =====
+  hero.style.backgroundImage = `url('${d.hero.background}')`;
+  heroBadge.textContent = d.hero.badge;
+  heroTitle.textContent = d.hero.title;
+  heroSubtitle.textContent = d.hero.subtitle;
+  heroBtnPrimary.textContent = d.hero.actions.primary;
+  heroBtnSecondary.textContent = d.hero.actions.secondary;
+  heroCardTitle.textContent = d.hero.card.title;
+  heroCardDesc1.textContent = d.hero.card.desc1;
+  heroCardDesc2.textContent = d.hero.card.desc2;
 
-  heroBadge.textContent=d.hero.badge;
-  heroTitle.textContent=d.hero.title;
-  heroSubtitle.textContent=d.hero.subtitle;
-  heroBtnPrimary.textContent=d.hero.actions.primary;
-  heroBtnSecondary.textContent=d.hero.actions.secondary;
-  heroCardTitle.textContent=d.hero.card.title;
-  heroCardDesc1.textContent=d.hero.card.desc1;
-  heroCardDesc2.textContent=d.hero.card.desc2;
-
-  const dest=document.getElementById("destList");
-  dest.innerHTML="";
-  d.destinations.forEach(i=>{
-    dest.innerHTML+=`
+  // ===== DESTINATIONS =====
+  destList.innerHTML = "";
+  d.destinations.forEach(i => {
+    destList.innerHTML += `
       <div class="card">
         <img src="${i.img}">
         <div class="card-body">
@@ -229,13 +247,14 @@ async function loadContent(){
       </div>`;
   });
 
-  footerTitle.textContent=d.footer.title;
-  footerDesc.textContent=d.footer.desc;
-  footerCopy.textContent=d.footer.copyright;
+  // ===== FOOTER =====
+  footerTitle.textContent = d.footer.title;
+  footerDesc.textContent = d.footer.desc;
+  footerCopy.textContent = d.footer.copyright;
 }
 
-document.addEventListener("DOMContentLoaded",loadContent);
+document.addEventListener("DOMContentLoaded", loadContent);
 </script>
-
 </body>
 </html>
+
