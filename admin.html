@@ -5,94 +5,66 @@
   <title>Luxury Travel – Admin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body{
-      font-family: system-ui, sans-serif;
-      background:#f4f5f8;
-      margin:0;
-      padding:30px;
-    }
-    .wrap{
-      max-width:900px;
-      margin:auto;
-      background:#fff;
-      padding:30px;
-      border-radius:14px;
-      box-shadow:0 10px 30px rgba(0,0,0,.1);
-    }
-    h2{margin-top:0}
-    .group{margin-bottom:28px}
-    label{display:block;font-weight:600;margin-bottom:6px}
-    input, textarea{
-      width:100%;
-      padding:10px;
-      border-radius:8px;
-      border:1px solid #ccc;
-      font-size:14px;
-    }
+    body{font-family:system-ui,sans-serif;background:#f4f5f8;margin:0;padding:30px}
+    .wrap{max-width:980px;margin:auto;background:#fff;padding:28px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.1)}
+    h2{margin:0}
+    h3{margin:22px 0 10px}
+    label{display:block;font-weight:600;margin:10px 0 6px}
+    input, textarea{width:100%;padding:10px;border-radius:10px;border:1px solid #ccc;font-size:14px}
     textarea{min-height:80px}
-    .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .btn{
-      background:#c5a46d;
-      border:none;
-      padding:12px 26px;
-      border-radius:999px;
-      font-weight:600;
-      cursor:pointer;
-    }
-    .topbar{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:20px;
-    }
-    .pw{max-width:240px}
-    hr{border:none;border-top:1px solid #eee;margin:30px 0}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;gap:12px;flex-wrap:wrap}
+    .pw{max-width:260px}
+    .btn{background:#c5a46d;border:none;padding:11px 22px;border-radius:999px;font-weight:700;cursor:pointer}
+    .btn2{background:#111827;color:#fff;border:none;padding:10px 18px;border-radius:999px;font-weight:650;cursor:pointer}
+    .btnDanger{background:#ef4444;color:#fff;border:none;padding:8px 12px;border-radius:10px;font-weight:650;cursor:pointer}
+    .card{border:1px solid #eee;border-radius:14px;padding:14px;margin-top:12px;background:#fafafa}
+    .cardHead{display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .muted{color:#6b7280;font-size:13px}
+    hr{border:none;border-top:1px solid #eee;margin:24px 0}
   </style>
 </head>
 
 <body>
 <div class="wrap">
-
   <div class="topbar">
-    <h2>Luxury Travel – Admin</h2>
+    <div>
+      <h2>Luxury Travel – Admin</h2>
+      <div class="muted">Chỉnh nội dung → Lưu → Website public đổi ngay</div>
+    </div>
     <input class="pw" id="pw" type="password" placeholder="Password quản trị">
   </div>
 
   <!-- HERO -->
-  <div class="group">
-    <h3>Hero (Trang đầu)</h3>
-    <label>Badge</label>
-    <input id="heroBadge">
-
-    <label>Tiêu đề</label>
-    <input id="heroTitle">
-
-    <label>Mô tả</label>
-    <textarea id="heroSubtitle"></textarea>
-
-    <div class="row">
-      <div>
-        <label>Nút chính</label>
-        <input id="heroCta1">
-      </div>
-      <div>
-        <label>Nút phụ</label>
-        <input id="heroCta2">
-      </div>
+  <h3>Hero (Trang đầu)</h3>
+  <label>Badge</label>
+  <input id="heroBadge">
+  <label>Tiêu đề</label>
+  <input id="heroTitle">
+  <label>Mô tả</label>
+  <textarea id="heroSubtitle"></textarea>
+  <div class="row">
+    <div>
+      <label>Nút chính</label>
+      <input id="heroCta1">
+    </div>
+    <div>
+      <label>Nút phụ</label>
+      <input id="heroCta2">
     </div>
   </div>
 
   <hr>
 
   <!-- SERVICES -->
-  <div class="group">
-    <h3>Dịch vụ (2 mục)</h3>
-
+  <h3>Dịch vụ (2 mục)</h3>
+  <div class="card">
     <label>Dịch vụ 1 – Tên</label>
     <input id="svc1Title">
     <label>Dịch vụ 1 – Mô tả</label>
     <textarea id="svc1Desc"></textarea>
-
+  </div>
+  <div class="card">
     <label>Dịch vụ 2 – Tên</label>
     <input id="svc2Title">
     <label>Dịch vụ 2 – Mô tả</label>
@@ -101,8 +73,25 @@
 
   <hr>
 
-  <button class="btn" onclick="save()">💾 Lưu thay đổi</button>
+  <!-- DESTINATIONS -->
+  <div class="topbar" style="margin-top:8px">
+    <h3 style="margin:0">Destinations (Điểm đến)</h3>
+    <button class="btn2" type="button" onclick="addDestination()">+ Thêm điểm đến</button>
+  </div>
+  <div id="destinationsList"></div>
 
+  <hr>
+
+  <!-- GALLERY -->
+  <div class="topbar" style="margin-top:8px">
+    <h3 style="margin:0">Gallery (Ảnh)</h3>
+    <button class="btn2" type="button" onclick="addGallery()">+ Thêm ảnh</button>
+  </div>
+  <div id="galleryList"></div>
+
+  <hr>
+
+  <button class="btn" type="button" onclick="save()">💾 Lưu thay đổi</button>
 </div>
 
 <script src="admin.js"></script>
