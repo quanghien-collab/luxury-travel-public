@@ -2,232 +2,1405 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <title>Luxury Travel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Travel – Hành trình đẳng cấp</title>
 
-  <!-- FONT -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- SEO -->
+  <meta name="description" content="Luxury Travel – Thiết kế hành trình riêng tư, sang trọng, chuẩn 5 sao quốc tế cho doanh nhân & gia đình." />
+  <meta name="keywords" content="luxury travel, du lịch cao cấp, private concierge, retreat, resort 5 sao" />
+
+  <!-- Fonts (Luxury) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: #111;
-      color: #eee;
+    :root{
+      --bg:#07080b;
+      --bg2:#0b0f16;
+      --panel: rgba(255,255,255,0.06);
+      --panel2: rgba(255,255,255,0.08);
+      --stroke: rgba(255,255,255,0.14);
+      --text:#e9edf6;
+      --muted: rgba(233,237,246,0.72);
+      --gold:#c5a46d;
+      --gold2:#e5cfa1;
+      --shadow: 0 24px 60px rgba(0,0,0,0.55);
+      --shadow2: 0 12px 36px rgba(0,0,0,0.40);
+      --radius: 20px;
+      --radius2: 26px;
+      --max: 1180px;
+      --hfont: "Cormorant Garamond", serif;
+      --bfont: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
 
-    /* ===== NAV ===== */
-    header {
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: var(--bfont);
+      color: var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(197,164,109,0.18), transparent 55%),
+        radial-gradient(900px 500px at 85% 25%, rgba(140,180,255,0.12), transparent 60%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{max-width: var(--max); margin: 0 auto; padding: 0 22px;}
+    .blur-orb{
+      position:absolute; inset:auto;
+      filter: blur(80px);
+      opacity:0.6;
+      pointer-events:none;
+    }
+
+    /* Header */
+    header{
       position: fixed;
-      top: 0; left: 0; right: 0;
-      height: 64px;
-      background: rgba(0,0,0,.85);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 32px;
-      z-index: 10;
+      top:0; left:0; right:0;
+      z-index: 9999;
+      transition: all .25s ease;
+      background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0));
+      backdrop-filter: blur(8px);
     }
-    header .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      color: #c9a45c;
+    header.scrolled{
+      background: rgba(6,7,10,0.78);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-    nav a {
-      margin-left: 24px;
-      color: #ddd;
-      text-decoration: none;
-      font-size: 14px;
+    .nav-wrap{
+      display:flex; align-items:center; justify-content:space-between;
+      height: 74px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700;
+      letter-spacing:0.5px;
+      color: var(--gold);
+      font-family: var(--hfont);
+      font-size: 24px;
+      user-select:none;
+    }
+    .brand .dot{
+      width:8px; height:8px; border-radius:99px;
+      background: var(--gold);
+      box-shadow: 0 0 22px rgba(197,164,109,0.55);
+    }
+    nav{
+      display:flex; gap:22px; align-items:center;
+      font-size:14px;
+      color: rgba(233,237,246,0.78);
+    }
+    nav a{
+      padding:10px 10px;
+      border-radius: 999px;
+      transition: all .2s ease;
+    }
+    nav a:hover{
+      color: var(--text);
+      background: rgba(255,255,255,0.06);
+    }
+    .nav-cta{
+      display:flex; gap:10px; align-items:center;
+    }
+    .btn{
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight:600;
+      font-size: 13px;
+      cursor:pointer;
+      transition: all .2s ease;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.18);
+    }
+    .btn.gold{
+      background: linear-gradient(180deg, rgba(229,207,161,0.98), rgba(197,164,109,0.98));
+      border: 0;
+      color: #17130b;
+      box-shadow: 0 18px 30px rgba(197,164,109,0.25);
+    }
+    .btn.gold:hover{
+      filter: brightness(1.02);
+      transform: translateY(-1px);
     }
 
-    /* ===== HERO ===== */
-    #hero {
+    .burger{
+      display:none;
+      width:44px; height:44px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      align-items:center; justify-content:center;
+      cursor:pointer;
+    }
+    .burger span{
+      width:18px; height:2px; background: rgba(233,237,246,0.86);
+      display:block; position:relative;
+    }
+    .burger span::before,.burger span::after{
+      content:""; position:absolute; left:0; width:18px; height:2px;
+      background: rgba(233,237,246,0.86);
+    }
+    .burger span::before{top:-6px}
+    .burger span::after{top:6px}
+
+    /* Mobile nav */
+    @media (max-width: 900px){
+      nav{display:none}
+      .burger{display:flex}
+      .mobile-nav{
+        display:none;
+        position: absolute;
+        top: 74px; left: 0; right: 0;
+        background: rgba(6,7,10,0.92);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        backdrop-filter: blur(10px);
+      }
+      .mobile-nav.open{display:block}
+      .mobile-nav .inner{
+        padding: 14px 18px 18px;
+        display:flex;
+        flex-direction:column;
+        gap: 8px;
+      }
+      .mobile-nav a{
+        padding: 12px 12px;
+        border-radius: 12px;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.06);
+      }
+      .nav-cta{display:none}
+    }
+
+    /* Hero */
+    .hero{
+      position: relative;
       min-height: 100vh;
-      padding-top: 64px;
-      background-size: cover;
+      padding-top: 92px;
+      display:flex; align-items:center;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(900px 420px at 18% 30%, rgba(197,164,109,0.22), transparent 55%),
+        radial-gradient(700px 420px at 88% 35%, rgba(120,170,255,0.14), transparent 55%),
+        linear-gradient(180deg, rgba(0,0,0,0.55), rgba(0,0,0,0.78));
+      z-index:1;
+      pointer-events:none;
+    }
+    .hero-bg{
+      position:absolute; inset:0;
       background-position: center;
-      position: relative;
+      background-size: cover;
+      transform: scale(1.06);
+      filter: saturate(1.05) contrast(1.02);
     }
-    #hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,.6), rgba(0,0,0,.3));
+    .hero-content{
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 30px;
+      align-items: center;
+      padding: 44px 0 64px;
     }
-    .hero-inner {
-      position: relative;
-      max-width: 1200px;
-      margin: auto;
-      padding: 120px 32px;
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 40px;
+    @media (max-width: 980px){
+      .hero-content{grid-template-columns: 1fr; gap: 18px}
     }
-    .badge {
-      display: inline-block;
-      padding: 6px 14px;
-      background: rgba(201,164,92,.15);
-      color: #c9a45c;
+
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.22);
+      color: rgba(233,237,246,0.90);
       font-size: 12px;
-      border-radius: 20px;
-      margin-bottom: 16px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      width: fit-content;
     }
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 52px;
+    .badge .spark{
+      width: 8px; height: 8px; border-radius: 99px;
+      background: var(--gold);
+      box-shadow: 0 0 18px rgba(197,164,109,0.55);
+    }
+
+    h1{
+      margin: 14px 0 10px;
+      font-family: var(--hfont);
+      font-size: 64px;
+      line-height: 0.95;
+      letter-spacing: 0.2px;
+    }
+    @media (max-width: 980px){ h1{font-size: 54px} }
+    @media (max-width: 520px){ h1{font-size: 42px} }
+
+    .lead{
+      color: rgba(233,237,246,0.78);
+      font-size: 16px;
+      line-height: 1.8;
+      max-width: 64ch;
+    }
+    .actions{
+      display:flex; gap: 12px; align-items:center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Hero glass card */
+    .glass{
+      background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.06));
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+    .hero-card{
+      padding: 18px 18px 18px;
+      position: relative;
+      overflow:hidden;
+    }
+    .hero-card::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(420px 220px at 15% 10%, rgba(229,207,161,0.22), transparent 55%);
+      pointer-events:none;
+    }
+    .hero-card h3{
+      margin: 0 0 8px;
+      font-family: var(--hfont);
+      color: var(--gold2);
+      font-size: 22px;
+      position:relative;
+      z-index:1;
+    }
+    .hero-card p{
+      margin: 0 0 10px;
+      color: rgba(233,237,246,0.78);
+      font-size: 13.5px;
+      line-height: 1.75;
+      position:relative;
+      z-index:1;
+    }
+    .hero-card .line{
+      height:1px;
+      background: rgba(255,255,255,0.10);
+      margin: 12px 0;
+      position:relative;
+      z-index:1;
+    }
+    .hero-card .tag{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.18);
+      border: 1px solid rgba(255,255,255,0.10);
+      font-size: 12px;
+      color: rgba(233,237,246,0.80);
+      position:relative;
+      z-index:1;
+    }
+    .hero-bottom{
+      position:absolute;
+      left:0; right:0;
+      bottom: 26px;
+      z-index:2;
+      text-align:center;
+      color: rgba(233,237,246,0.65);
+      font-size: 12.5px;
+      letter-spacing: 0.3px;
+    }
+    .hero-bottom .arrow{
+      margin-top: 6px;
+      font-size: 18px;
+      opacity: 0.8;
+      animation: bounce 1.6s infinite;
+    }
+    @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+    /* Sections */
+    section{padding: 86px 0}
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap: 14px;
       margin-bottom: 20px;
     }
-    .subtitle {
-      font-size: 16px;
-      line-height: 1.7;
-      color: #ccc;
-      margin-bottom: 32px;
+    .kicker{
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(233,237,246,0.62);
     }
-    .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 28px;
-      background: #c9a45c;
-      color: #111;
-      text-decoration: none;
-      font-weight: 500;
-      margin-right: 12px;
+    .title{
+      font-family: var(--hfont);
+      font-size: 38px;
+      margin: 8px 0 0;
+      line-height: 1.05;
     }
-    .btn.secondary {
-      background: transparent;
-      border: 1px solid #c9a45c;
-      color: #c9a45c;
+    .sub{
+      color: rgba(233,237,246,0.68);
+      font-size: 14px;
+      max-width: 70ch;
+      line-height: 1.8;
+      margin-top: 10px;
+    }
+    @media (max-width: 720px){ .title{font-size: 30px} }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+    @media (max-width: 980px){ .grid{grid-template-columns: 1fr 1fr} }
+    @media (max-width: 650px){ .grid{grid-template-columns: 1fr} }
+
+    .card{
+      border-radius: var(--radius);
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      box-shadow: var(--shadow2);
+      transition: transform .18s ease, border-color .18s ease, background .18s ease;
+    }
+    .card:hover{
+      transform: translateY(-4px);
+      border-color: rgba(229,207,161,0.18);
+      background: rgba(255,255,255,0.06);
+    }
+    .card .img{
+      height: 190px;
+      background-size: cover;
+      background-position:center;
+      position:relative;
+    }
+    .card .img::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.10), rgba(0,0,0,0.55));
+    }
+    .card .body{padding: 16px 16px 18px}
+    .card .body h3{
+      margin: 0 0 6px;
+      font-family: var(--hfont);
+      font-size: 22px;
+      color: rgba(233,237,246,0.92);
+    }
+    .card .body p{
+      margin:0;
+      color: rgba(233,237,246,0.68);
+      font-size: 13.5px;
+      line-height: 1.75;
     }
 
-    .hero-card {
-      background: rgba(0,0,0,.6);
-      border-radius: 20px;
-      padding: 28px;
+    /* About */
+    .about{
+      display:grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 18px;
     }
-    .hero-card h3 {
-      font-family: 'Playfair Display', serif;
-      color: #c9a45c;
-      margin-bottom: 12px;
+    @media (max-width: 980px){ .about{grid-template-columns: 1fr} }
+    .about .pane{
+      padding: 22px 22px 22px;
     }
-    .hero-card p {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #ccc;
+    .about p{color: rgba(233,237,246,0.70); line-height: 1.85; font-size: 14px; margin: 0 0 12px;}
+    .about strong{color: rgba(233,237,246,0.92)}
+    .about .photo{
+      border-radius: var(--radius2);
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: var(--shadow);
+      position:relative;
+    }
+    .about .photo .img{
+      position:absolute; inset:0;
+      background-size: cover;
+      background-position:center;
+      transform: scale(1.02);
+      filter: contrast(1.02) saturate(1.05);
+    }
+    .about .photo::after{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(520px 280px at 15% 20%, rgba(229,207,161,0.18), transparent 55%),
+                  linear-gradient(180deg, rgba(0,0,0,0.15), rgba(0,0,0,0.45));
+    }
+
+    /* Services */
+    .svc{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (max-width: 980px){ .svc{grid-template-columns: 1fr 1fr} }
+    @media (max-width: 650px){ .svc{grid-template-columns: 1fr} }
+    .svc .item{
+      padding: 18px 18px 18px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: var(--shadow2);
+      position:relative;
+      overflow:hidden;
+    }
+    .svc .item::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background: radial-gradient(420px 220px at 10% 10%, rgba(197,164,109,0.16), transparent 55%);
+      pointer-events:none;
+    }
+    .svc .icon{
+      width: 40px; height: 40px;
+      border-radius: 14px;
+      display:flex; align-items:center; justify-content:center;
+      background: rgba(0,0,0,0.22);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: var(--gold2);
+      font-size: 18px;
       margin-bottom: 10px;
+      position:relative;
+      z-index:1;
+    }
+    .svc h3{
+      margin: 0 0 6px;
+      font-family: var(--hfont);
+      font-size: 22px;
+      position:relative;
+      z-index:1;
+    }
+    .svc p{
+      margin: 0;
+      color: rgba(233,237,246,0.70);
+      line-height: 1.8;
+      font-size: 13.5px;
+      position:relative;
+      z-index:1;
     }
 
-    /* ===== FOOTER ===== */
-    footer {
-      padding: 60px 32px;
-      background: #0b0b0b;
-      text-align: center;
+    /* Gallery */
+    .strip{
+      display:flex;
+      gap: 12px;
+      overflow:auto;
+      padding: 4px 2px 8px;
+      scroll-snap-type: x mandatory;
     }
-    footer h3 {
-      font-family: 'Playfair Display', serif;
-      color: #c9a45c;
-      margin-bottom: 12px;
+    .strip::-webkit-scrollbar{height:6px}
+    .strip::-webkit-scrollbar-thumb{background: rgba(255,255,255,0.16); border-radius: 999px}
+    .shot{
+      min-width: 260px;
+      height: 160px;
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: var(--shadow2);
+      scroll-snap-align: start;
+      position:relative;
+      background-size: cover;
+      background-position:center;
     }
-    footer p {
-      color: #888;
-      font-size: 14px;
+    .shot::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.45));
     }
 
-    @media (max-width: 900px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-      }
-      h1 { font-size: 40px; }
+    /* Booking */
+    .booking{
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: var(--radius2);
+    }
+    .booking .wrap{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 780px){ .booking .wrap{grid-template-columns:1fr} }
+    label{display:block; font-size: 12.5px; color: rgba(233,237,246,0.72); margin-bottom: 6px}
+    input,select,textarea{
+      width:100%;
+      padding: 11px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      outline:none;
+      font-family: var(--bfont);
+      transition: all .18s ease;
+    }
+    input:focus,select:focus,textarea:focus{
+      border-color: rgba(229,207,161,0.28);
+      box-shadow: 0 0 0 2px rgba(197,164,109,0.16);
+    }
+    textarea{min-height: 92px; resize: vertical}
+    .booking .footer{
+      margin-top: 12px;
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      color: rgba(233,237,246,0.62);
+      font-size: 12.5px;
+    }
+
+    /* Footer */
+    footer{
+      padding: 52px 0 30px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      background: rgba(0,0,0,0.18);
+    }
+    footer .ft-title{
+      font-family: var(--hfont);
+      font-size: 26px;
+      color: var(--gold);
+      margin: 0 0 6px;
+    }
+    footer p{
+      margin: 0 0 8px;
+      color: rgba(233,237,246,0.66);
+      line-height: 1.8;
+      font-size: 13.5px;
+    }
+
+    /* Tiny toast */
+    .toast{
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.78);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: rgba(233,237,246,0.92);
+      padding: 10px 12px;
+      border-radius: 14px;
+      font-size: 13px;
+      box-shadow: var(--shadow2);
+      opacity: 0;
+      pointer-events:none;
+      transition: opacity .18s ease, transform .18s ease;
+      z-index: 999999;
+    }
+    .toast.show{
+      opacity: 1;
+      transform: translateX(-50%) translateY(-6px);
+    }
+
+    /* Chat widget */
+    #chatbot-btn{
+      position: fixed;
+      right: 18px; bottom: 18px;
+      width: 56px; height: 56px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, rgba(229,207,161,0.98), rgba(197,164,109,0.98));
+      color: #17130b;
+      display:flex; align-items:center; justify-content:center;
+      font-size: 22px;
+      cursor:pointer;
+      z-index: 999999;
+      box-shadow: 0 18px 30px rgba(197,164,109,0.25);
+      border: 0;
+    }
+    #chatbot-btn:hover{filter: brightness(1.02); transform: translateY(-1px)}
+    #chatbot-box{
+      position: fixed;
+      right: 18px; bottom: 84px;
+      width: 340px; height: 460px;
+      border-radius: 22px;
+      background: rgba(10,12,18,0.82);
+      border: 1px solid rgba(255,255,255,0.10);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      display:none;
+      flex-direction: column;
+      overflow:hidden;
+      z-index: 999999;
+    }
+    #chatbot-header{
+      padding: 14px 14px;
+      display:flex; align-items:center; justify-content:space-between;
+      color: var(--gold2);
+      font-weight: 700;
+      letter-spacing: .3px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-family: var(--hfont);
+      font-size: 18px;
+    }
+    #chatbot-header .x{
+      width:34px; height:34px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.06);
+      color: rgba(233,237,246,0.86);
+      cursor:pointer;
+      display:flex; align-items:center; justify-content:center;
+      font-family: var(--bfont);
+    }
+    #chatbot-messages{
+      flex: 1;
+      padding: 12px;
+      overflow:auto;
+      display:flex;
+      flex-direction:column;
+      gap: 8px;
+    }
+    .msg{
+      max-width: 84%;
+      padding: 10px 11px;
+      border-radius: 16px;
+      font-size: 13.5px;
+      line-height: 1.6;
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+    .msg.bot{
+      align-self:flex-start;
+      background: rgba(255,255,255,0.06);
+      color: rgba(233,237,246,0.86);
+    }
+    .msg.user{
+      align-self:flex-end;
+      background: rgba(197,164,109,0.20);
+      border-color: rgba(229,207,161,0.22);
+      color: rgba(233,237,246,0.92);
+    }
+    #chatbot-input{
+      display:flex;
+      gap: 8px;
+      padding: 10px 10px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      background: rgba(0,0,0,0.16);
+    }
+    #chatbot-text{
+      flex:1;
+      padding: 10px 11px;
+      border-radius: 14px;
+    }
+    #chatbot-send{
+      width: 86px;
+      border-radius: 14px;
+      border: 0;
+      cursor:pointer;
+      font-weight: 800;
+      background: linear-gradient(180deg, rgba(229,207,161,0.98), rgba(197,164,109,0.98));
+      color: #17130b;
+    }
+    #chatbot-send:hover{filter: brightness(1.02)}
+
+    @media (max-width: 420px){
+      #chatbot-box{width: calc(100vw - 24px); right: 12px}
+      #chatbot-btn{right: 12px}
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">Luxury Travel</div>
-  <nav id="navMenu"></nav>
-</header>
+  <!-- HEADER -->
+  <header id="siteHeader">
+    <div class="container nav-wrap">
+      <div class="brand" id="brandText">
+        <span class="dot"></span>
+        <span id="logoText">Luxury Travel</span>
+      </div>
 
-<section id="hero">
-  <div class="hero-inner">
-    <div>
-      <span class="badge" id="heroBadge">SIGNATURE EXPERIENCE</span>
-      <h1 id="heroTitle">Hành trình tinh tế</h1>
-      <p class="subtitle" id="heroSubtitle">
-        Trải nghiệm du lịch riêng tư, được thiết kế cho cảm xúc và chiều sâu.
-      </p>
-      <a href="#contact" class="btn" id="heroBtnPrimary">Đặt tư vấn 1:1</a>
-      <a href="#journey" class="btn secondary" id="heroBtnSecondary">Xem hành trình</a>
+      <nav id="navMenu" aria-label="Primary">
+        <a href="#destinations">Hành trình</a>
+        <a href="#services">Dịch vụ</a>
+        <a href="#about">Triết lý</a>
+        <a href="#booking">Đặt lịch</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+
+      <div class="nav-cta">
+        <button class="btn" id="btnSecondaryTop" type="button">Xem hành trình</button>
+        <button class="btn gold" id="btnPrimaryTop" type="button">Đặt tư vấn 1:1</button>
+      </div>
+
+      <div class="burger" id="burgerBtn" aria-label="Open Menu" role="button" tabindex="0">
+        <span></span>
+      </div>
     </div>
 
-    <div class="hero-card">
-      <h3 id="heroCardTitle">Private Concierge 24/7</h3>
-      <p id="heroCardDesc1">Một người đồng hành xuyên suốt hành trình.</p>
-      <p id="heroCardDesc2">Ưu tiên sự riêng tư, tinh tế và an toàn.</p>
+    <div class="mobile-nav" id="mobileNav">
+      <div class="inner" id="mobileNavInner"></div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="hero" id="top">
+    <div class="hero-bg" id="heroBg"></div>
+
+    <div class="container hero-content">
+      <div>
+        <div class="badge" id="heroBadge"><span class="spark"></span><span>SIGNATURE JOURNEY</span></div>
+        <h1 id="heroTitle">Hành trình tinh tế<br/>chuẩn mực riêng tư</h1>
+        <p class="lead" id="heroSubtitle">
+          Thiết kế trải nghiệm du lịch dành cho doanh nhân và gia đình trân trọng thời gian, cảm xúc và sự kín đáo tuyệt đối.
+        </p>
+
+        <div class="actions">
+          <button class="btn gold" id="heroPrimary" type="button">Đặt cuộc trao đổi riêng</button>
+          <button class="btn" id="heroSecondary" type="button">Xem hành trình</button>
+        </div>
+      </div>
+
+      <aside class="glass hero-card" id="heroCard">
+        <h3 id="heroCardTitle">Private Concierge 24/7</h3>
+        <p id="heroCardDesc1">
+          Một người đồng hành duy nhất theo sát hành trình của bạn – từ lúc hình thành ý tưởng cho đến khi trở về.
+        </p>
+        <div class="line"></div>
+        <p id="heroCardDesc2"><strong style="color:rgba(233,237,246,0.92)">Ưu tiên:</strong> Doanh nhân, gia đình, người cần không gian riêng tư và bảo mật.</p>
+        <div style="margin-top:12px;">
+          <span class="tag">Bảo mật • Tinh tế • Linh hoạt</span>
+        </div>
+      </aside>
+    </div>
+
+    <div class="hero-bottom">
+      Cuộn xuống để bắt đầu hành trình
+      <div class="arrow">↓</div>
+    </div>
+  </main>
+
+  <!-- DESTINATIONS -->
+  <section id="destinations">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Signature Destinations</div>
+          <div class="title">Hành trình sang trọng</div>
+          <div class="sub">Những gợi ý “đúng gu” – riêng tư, tinh tế, và tối ưu thời gian cho người bận rộn.</div>
+        </div>
+      </div>
+
+      <div class="grid" id="destList"></div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Premium Services</div>
+          <div class="title">Dịch vụ concierge</div>
+          <div class="sub">Chọn “cảm hứng” – phần còn lại Luxury Travel lo. Tối ưu trải nghiệm, giảm mọi phiền nhiễu.</div>
+        </div>
+      </div>
+
+      <div class="svc" id="svcList"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Why Luxury Travel</div>
+          <div class="title" id="aboutTitle">Thiết kế theo từng người – không theo “tour mẫu”.</div>
+          <div class="sub">Điều chúng tôi theo đuổi là trải nghiệm “êm” – kín đáo, vừa vặn và luôn có phương án dự phòng.</div>
+        </div>
+      </div>
+
+      <div class="about">
+        <div class="glass pane" id="aboutPane">
+          <p id="aboutDesc1">
+            Mỗi chuyến đi được xây dựng dựa trên nhịp sống, sở thích và mức độ riêng tư mà khách hàng mong muốn. Không ghép đoàn, không lịch trình cứng nhắc.
+          </p>
+          <p id="aboutDesc2">
+            Concierge theo sát trước – trong – sau hành trình: nhà hàng, vé, lịch spa, golf, trải nghiệm bản địa… chỉ qua một tin nhắn.
+          </p>
+          <p id="aboutDesc3">
+            <strong>Ưu tiên:</strong> Sự kín đáo, bảo mật thông tin và cảm xúc trọn vẹn cho gia đình.
+          </p>
+        </div>
+
+        <div class="photo" aria-label="About image">
+          <div class="img" id="aboutImg"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Gallery</div>
+          <div class="title">Khoảnh khắc</div>
+          <div class="sub">Một vài mảnh ghép cảm hứng – để TS/khách hàng nhìn là muốn đi ngay.</div>
+        </div>
+      </div>
+
+      <div class="strip" id="galleryStrip"></div>
+    </div>
+  </section>
+
+  <!-- BOOKING -->
+  <section id="booking">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Private Consultation</div>
+          <div class="title">Đăng ký tư vấn hành trình riêng</div>
+          <div class="sub">Đội concierge sẽ liên hệ lại trong thời gian sớm nhất. Thông tin được bảo mật.</div>
+        </div>
+      </div>
+
+      <div class="glass booking">
+        <form id="luxForm" autocomplete="on">
+          <div class="booking wrap">
+            <div>
+              <label>Họ tên</label>
+              <input id="fullName" type="text" required placeholder="Ví dụ: Nguyễn Văn A" />
+            </div>
+            <div>
+              <label>Số điện thoại</label>
+              <input id="phone" type="tel" required placeholder="Ví dụ: 090..." />
+            </div>
+            <div>
+              <label>Email (nếu có)</label>
+              <input id="email" type="email" placeholder="name@email.com" />
+            </div>
+            <div>
+              <label>Loại hành trình</label>
+              <select id="tripType">
+                <option>Family Retreat</option>
+                <option>Business Trip</option>
+                <option>Honeymoon</option>
+                <option>Wellness & Detox</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-top:12px;">
+            <label>Mong muốn của khách hàng</label>
+            <textarea id="message" placeholder="Ví dụ: đi 4N3Đ, ưu tiên villa riêng, spa, ẩm thực..."></textarea>
+          </div>
+
+          <div class="booking footer">
+            <button class="btn gold" type="submit">Gửi yêu cầu</button>
+            <div id="bookingNote">Thông tin chỉ dùng để tư vấn hành trình.</div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <div class="container">
+      <div class="ft-title" id="footerTitle">Luxury Travel</div>
+      <p id="footerDesc">Hành trình tinh tế – dành riêng cho người bận rộn nhưng vẫn muốn sống trọn từng khoảnh khắc.</p>
+      <p id="footerCopy">© 2025 Luxury Travel. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- CHAT -->
+  <button id="chatbot-btn" title="Luxury Assistant">💬</button>
+  <div id="chatbot-box">
+    <div id="chatbot-header">
+      <span>Luxury Assistant</span>
+      <button class="x" id="chatClose" type="button">✕</button>
+    </div>
+    <div id="chatbot-messages"></div>
+    <div id="chatbot-input">
+      <input id="chatbot-text" type="text" placeholder="Nhập câu hỏi..." />
+      <button id="chatbot-send" type="button">Gửi</button>
     </div>
   </div>
-</section>
 
-<footer>
-  <h3 id="footerTitle">Luxury Travel</h3>
-  <p id="footerDesc">Thiết kế hành trình riêng – chuẩn mực riêng.</p>
-  <p id="footerCopy">© 2025 Luxury Travel</p>
-</footer>
+  <div class="toast" id="toast"></div>
 
-<script>
-async function loadContent() {
-  try {
-    // ===== DOM =====
-    const hero = document.getElementById("hero");
-    const heroBadge = document.getElementById("heroBadge");
-    const heroTitle = document.getElementById("heroTitle");
-    const heroSubtitle = document.getElementById("heroSubtitle");
-    const heroBtnPrimary = document.getElementById("heroBtnPrimary");
-    const heroBtnSecondary = document.getElementById("heroBtnSecondary");
-    const heroCardTitle = document.getElementById("heroCardTitle");
-    const heroCardDesc1 = document.getElementById("heroCardDesc1");
-    const heroCardDesc2 = document.getElementById("heroCardDesc2");
-    const navMenu = document.getElementById("navMenu");
-    const footerTitle = document.getElementById("footerTitle");
-    const footerDesc = document.getElementById("footerDesc");
-    const footerCopy = document.getElementById("footerCopy");
+  <script>
+    // =========================
+    // 0) Small helpers
+    // =========================
+    function $(id){ return document.getElementById(id); }
+    function toast(msg){
+      const t = $("toast");
+      if(!t) return;
+      t.textContent = msg;
+      t.classList.add("show");
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(()=>t.classList.remove("show"), 2200);
+    }
+    function safeText(el, value){
+      if(!el) return;
+      el.textContent = (value ?? "").toString();
+    }
+    function safeHTML(el, value){
+      if(!el) return;
+      el.innerHTML = value ?? "";
+    }
+    function isObj(x){ return x && typeof x === "object" && !Array.isArray(x); }
 
-    // ===== FETCH CONTENT =====
-    const res = await fetch("https://luxury-backend-iu71.onrender.com/content");
-    const d = await res.json();
+    // =========================
+    // 1) Default content (fallback if fetch fails)
+    // =========================
+    const DEFAULT_DATA = {
+      logo: "Luxury Travel",
+      nav: [
+        { label: "Hành trình", href: "#destinations" },
+        { label: "Dịch vụ", href: "#services" },
+        { label: "Triết lý", href: "#about" },
+        { label: "Đặt lịch", href: "#booking" },
+        { label: "Liên hệ", href: "#contact" }
+      ],
+      hero: {
+        background: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2400&q=70",
+        badge: "SIGNATURE JOURNEY",
+        title: "Hành trình tinh tế\nchuẩn mực riêng tư",
+        subtitle: "Khách hàng chỉ cần chọn cảm hứng, phần còn lại để đội ngũ concierge thiết kế hành trình riêng tư, sang trọng.",
+        actions: { primary: "Đặt cuộc trao đổi riêng", secondary: "Xem hành trình" },
+        card: {
+          title: "Private Concierge 24/7",
+          desc1: "Một người đồng hành duy nhất theo sát hành trình của bạn – từ lúc hình thành ý tưởng cho đến khi trở về.",
+          desc2: "Ưu tiên: Doanh nhân, gia đình, người cần không gian riêng tư và bảo mật."
+        }
+      },
+      destinations: [
+        { title: "Maldives Private Villa", desc: "Villa trên mặt biển – phục vụ riêng, chuẩn 6 sao quốc tế.", img: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=70" },
+        { title: "Kyoto Ancient Luxury", desc: "Ryokan riêng, onsen & kaiseki – tinh tế đúng chất Nhật.", img: "https://images.unsplash.com/photo-1549693578-d683be217e58?auto=format&fit=crop&w=1600&q=70" },
+        { title: "Sa Pa – Private Retreat", desc: "Retreat giữa núi rừng, villa riêng, spa & hồ bơi nước ấm.", img: "https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=1600&q=70" }
+      ],
+      services: [
+        { icon: "✈️", title: "Private Jet & Business Class", desc: "Tối ưu thời gian di chuyển, thủ tục ưu tiên và phòng chờ riêng." },
+        { icon: "🛥️", title: "Luxury Cruise & Yacht", desc: "Không gian riêng tư cho gia đình & đối tác – thư giãn mà vẫn hiệu quả." },
+        { icon: "🌿", title: "Wellness & Retreat", desc: "Detox, thiền, trị liệu cá nhân – nạp lại năng lượng đúng cách." }
+      ],
+      about: {
+        title: "Thiết kế theo từng người – không theo “tour mẫu”.",
+        desc1: "Mỗi chuyến đi được xây dựng dựa trên nhịp sống, sở thích và mức độ riêng tư mà khách hàng mong muốn.",
+        desc2: "Concierge theo sát trước – trong – sau hành trình, xử lý mọi thay đổi chỉ qua một tin nhắn.",
+        desc3: "Ưu tiên: Sự kín đáo, bảo mật thông tin và cảm xúc trọn vẹn cho gia đình.",
+        image: "https://images.unsplash.com/photo-1526779259212-939e64788e3c?auto=format&fit=crop&w=2000&q=70"
+      },
+      gallery: [
+        "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1400&q=70",
+        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1400&q=70",
+        "https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?auto=format&fit=crop&w=1400&q=70",
+        "https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1400&q=70"
+      ],
+      footer: {
+        title: "Luxury Travel",
+        desc: "Hành trình tinh tế – dành riêng cho người bận rộn nhưng vẫn muốn sống trọn từng khoảnh khắc.",
+        copyright: "© 2025 Luxury Travel. All Rights Reserved."
+      }
+    };
 
-    // ===== NAV =====
-    navMenu.innerHTML = "";
-    (d.nav || []).forEach(n => {
-      const a = document.createElement("a");
-      a.href = n.href;
-      a.textContent = n.label;
-      navMenu.appendChild(a);
-    });
+    // =========================
+    // 2) Render functions
+    // =========================
+    function normalizeHeroTitle(s){
+      // allow \n or <br>
+      if(!s) return "";
+      return s.toString().replace(/\n/g, "<br/>");
+    }
 
-    // ===== HERO =====
-    hero.style.backgroundImage = `url('${d.hero.background}')`;
-    heroBadge.textContent = d.hero.badge;
-    heroTitle.textContent = d.hero.title;
-    heroSubtitle.textContent = d.hero.subtitle;
-    heroBtnPrimary.textContent = d.hero.actions.primary;
-    heroBtnSecondary.textContent = d.hero.actions.secondary;
-    heroCardTitle.textContent = d.hero.card.title;
-    heroCardDesc1.textContent = d.hero.card.desc1;
-    heroCardDesc2.textContent = d.hero.card.desc2;
+    function renderNav(navData){
+      const navMenu = $("navMenu");
+      const mobile = $("mobileNavInner");
+      if(!navMenu || !mobile) return;
 
-    // ===== FOOTER =====
-    footerTitle.textContent = d.footer.title;
-    footerDesc.textContent = d.footer.desc;
-    footerCopy.textContent = d.footer.copyright;
+      // accept: array of strings OR array of objects {label, href}
+      let items = navData;
+      if(Array.isArray(items) && items.length && typeof items[0] === "string"){
+        // map into existing anchors order if provided as strings
+        items = items.map((txt, idx) => {
+          const hrefs = ["#destinations","#services","#about","#booking","#contact"];
+          return { label: txt, href: hrefs[idx] || "#" };
+        });
+      }
+      if(!Array.isArray(items) || items.length === 0){
+        items = DEFAULT_DATA.nav;
+      }
 
-  } catch (err) {
-    console.error("LOAD CONTENT ERROR:", err);
-  }
-}
+      navMenu.innerHTML = "";
+      mobile.innerHTML = "";
+      items.forEach(it => {
+        const label = isObj(it) ? (it.label ?? "") : (it ?? "");
+        const href = isObj(it) ? (it.href ?? "#") : "#";
+        const a1 = document.createElement("a");
+        a1.href = href;
+        a1.textContent = label;
+        navMenu.appendChild(a1);
 
-document.addEventListener("DOMContentLoaded", loadContent);
-</script>
+        const a2 = document.createElement("a");
+        a2.href = href;
+        a2.textContent = label;
+        mobile.appendChild(a2);
+      });
+    }
+
+    function renderHero(hero){
+      const bg = $("heroBg");
+      const badge = $("heroBadge");
+      const title = $("heroTitle");
+      const sub = $("heroSubtitle");
+
+      if(bg){
+        const url = hero?.background || DEFAULT_DATA.hero.background;
+        bg.style.backgroundImage = `url("${url}")`;
+      }
+      if(badge){
+        const text = hero?.badge || DEFAULT_DATA.hero.badge;
+        const span = badge.querySelector("span:last-child");
+        if(span) span.textContent = text;
+      }
+      if(title){
+        safeHTML(title, normalizeHeroTitle(hero?.title || DEFAULT_DATA.hero.title));
+      }
+      if(sub){
+        safeText(sub, hero?.subtitle || DEFAULT_DATA.hero.subtitle);
+      }
+
+      safeText($("heroPrimary"), hero?.actions?.primary || DEFAULT_DATA.hero.actions.primary);
+      safeText($("heroSecondary"), hero?.actions?.secondary || DEFAULT_DATA.hero.actions.secondary);
+
+      // top buttons
+      safeText($("btnPrimaryTop"), hero?.actions?.primary || DEFAULT_DATA.hero.actions.primary);
+      safeText($("btnSecondaryTop"), hero?.actions?.secondary || DEFAULT_DATA.hero.actions.secondary);
+
+      // card
+      safeText($("heroCardTitle"), hero?.card?.title || DEFAULT_DATA.hero.card.title);
+      safeText($("heroCardDesc1"), hero?.card?.desc1 || DEFAULT_DATA.hero.card.desc1);
+      // keep "Ưu tiên:" bold as HTML
+      const d2 = hero?.card?.desc2 || DEFAULT_DATA.hero.card.desc2;
+      const heroCardDesc2 = $("heroCardDesc2");
+      if(heroCardDesc2){
+        // if admin already includes "Ưu tiên:" then keep, else add bold prefix
+        if(String(d2).toLowerCase().includes("ưu tiên")){
+          safeHTML(heroCardDesc2, `<strong style="color:rgba(233,237,246,0.92)">Ưu tiên:</strong> ${String(d2).replace(/^\s*ưu tiên\s*:\s*/i,"")}`);
+        }else{
+          safeHTML(heroCardDesc2, `<strong style="color:rgba(233,237,246,0.92)">Ưu tiên:</strong> ${d2}`);
+        }
+      }
+    }
+
+    function renderDestinations(list){
+      const wrap = $("destList");
+      if(!wrap) return;
+      const items = Array.isArray(list) && list.length ? list : DEFAULT_DATA.destinations;
+      wrap.innerHTML = "";
+      items.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "card";
+        div.innerHTML = `
+          <div class="img" style="background-image:url('${item.img || ""}')"></div>
+          <div class="body">
+            <h3>${item.title || ""}</h3>
+            <p>${item.desc || ""}</p>
+          </div>
+        `;
+        wrap.appendChild(div);
+      });
+    }
+
+    function renderServices(list){
+      const wrap = $("svcList");
+      if(!wrap) return;
+      const items = Array.isArray(list) && list.length ? list : DEFAULT_DATA.services;
+      wrap.innerHTML = "";
+      items.forEach(s => {
+        const div = document.createElement("div");
+        div.className = "item";
+        div.innerHTML = `
+          <div class="icon">${s.icon || "★"}</div>
+          <h3>${s.title || ""}</h3>
+          <p>${s.desc || ""}</p>
+        `;
+        wrap.appendChild(div);
+      });
+    }
+
+    function renderAbout(about){
+      safeText($("aboutTitle"), about?.title || DEFAULT_DATA.about.title);
+      safeText($("aboutDesc1"), about?.desc1 || DEFAULT_DATA.about.desc1);
+      safeText($("aboutDesc2"), about?.desc2 || DEFAULT_DATA.about.desc2);
+      const d3 = about?.desc3 || DEFAULT_DATA.about.desc3;
+      safeHTML($("aboutDesc3"), `<strong>${d3}</strong>`);
+      const img = $("aboutImg");
+      if(img){
+        img.style.backgroundImage = `url("${about?.image || DEFAULT_DATA.about.image}")`;
+      }
+    }
+
+    function renderGallery(list){
+      const strip = $("galleryStrip");
+      if(!strip) return;
+      const items = Array.isArray(list) && list.length ? list : DEFAULT_DATA.gallery;
+      strip.innerHTML = "";
+      items.forEach(url => {
+        const d = document.createElement("div");
+        d.className = "shot";
+        d.style.backgroundImage = `url("${url}")`;
+        strip.appendChild(d);
+      });
+    }
+
+    function renderFooter(footer){
+      safeText($("footerTitle"), footer?.title || DEFAULT_DATA.footer.title);
+      safeText($("footerDesc"), footer?.desc || DEFAULT_DATA.footer.desc);
+      safeText($("footerCopy"), footer?.copyright || DEFAULT_DATA.footer.copyright);
+    }
+
+    function renderAll(data){
+      // logo
+      safeText($("logoText"), data?.logo || DEFAULT_DATA.logo);
+
+      // nav
+      renderNav(data?.nav);
+
+      // hero
+      renderHero(data?.hero);
+
+      // sections
+      renderDestinations(data?.destinations);
+      renderServices(data?.services);
+      renderAbout(data?.about);
+      renderGallery(data?.gallery);
+      renderFooter(data?.footer);
+    }
+
+    // =========================
+    // 3) Fetch content (robust)
+    // =========================
+    async function fetchContent(){
+      const candidates = [
+        "/content",
+        "/content.json",
+        "/data/content.json",
+        "content.json",
+        "data/content.json"
+      ];
+
+      for(const url of candidates){
+        try{
+          const res = await fetch(url, { cache: "no-store" });
+          if(!res.ok) continue;
+          const json = await res.json();
+          if(json && typeof json === "object"){
+            return json;
+          }
+        }catch(e){
+          // continue
+        }
+      }
+      return null;
+    }
+
+    // =========================
+    // 4) UI behaviors (safe)
+    // =========================
+    function setupUI(){
+      // header scroll
+      const header = $("siteHeader");
+      window.addEventListener("scroll", () => {
+        if(!header) return;
+        if(window.scrollY > 10) header.classList.add("scrolled");
+        else header.classList.remove("scrolled");
+      });
+
+      // burger
+      const burger = $("burgerBtn");
+      const mobileNav = $("mobileNav");
+      const toggleMobile = () => {
+        if(!mobileNav) return;
+        mobileNav.classList.toggle("open");
+      };
+      if(burger){
+        burger.addEventListener("click", toggleMobile);
+        burger.addEventListener("keydown", (e)=>{ if(e.key==="Enter") toggleMobile(); });
+      }
+      // close mobile when click
+      if(mobileNav){
+        mobileNav.addEventListener("click", (e)=>{
+          if(e.target && e.target.tagName === "A") mobileNav.classList.remove("open");
+        });
+      }
+
+      // buttons scroll
+      const goBooking = () => document.querySelector("#booking")?.scrollIntoView({behavior:"smooth"});
+      const goDest = () => document.querySelector("#destinations")?.scrollIntoView({behavior:"smooth"});
+      $("heroPrimary")?.addEventListener("click", goBooking);
+      $("btnPrimaryTop")?.addEventListener("click", goBooking);
+      $("heroSecondary")?.addEventListener("click", goDest);
+      $("btnSecondaryTop")?.addEventListener("click", goDest);
+    }
+
+    // =========================
+    // 5) Booking submit (never breaks UI)
+    // =========================
+    function setupBooking(){
+      const form = $("luxForm");
+      if(!form) return;
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const payload = {
+          name: $("fullName")?.value?.trim() || "",
+          phone: $("phone")?.value?.trim() || "",
+          email: $("email")?.value?.trim() || "",
+          trip: $("tripType")?.value || "",
+          message: $("message")?.value?.trim() || ""
+        };
+
+        if(!payload.name || !payload.phone){
+          toast("Vui lòng nhập họ tên và số điện thoại.");
+          return;
+        }
+
+        // 1) backend save (optional)
+        try{
+          await fetch("/save-form", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+        }catch(_){ /* ignore */ }
+
+        // 2) Google Sheets (optional) – keep your script URL
+        try{
+          await fetch("https://script.google.com/macros/s/AKfycbx47GGQwgdZqQmzhF6dSdTc3wpr_gPoWT2WQK301Bn9XJAB7_0ZzDmx5-NAC1knvxc/exec", {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              name: payload.name,
+              phone: payload.phone,
+              email: payload.email,
+              type: payload.trip,
+              message: payload.message
+            })
+          });
+        }catch(_){ /* ignore */ }
+
+        toast("Đã nhận yêu cầu. Concierge sẽ liên hệ sớm.");
+        form.reset();
+      });
+    }
+
+    // =========================
+    // 6) Chat widget (graceful)
+    // =========================
+    function setupChat(){
+      const btn = $("chatbot-btn");
+      const box = $("chatbot-box");
+      const close = $("chatClose");
+      const msgWrap = $("chatbot-messages");
+      const input = $("chatbot-text");
+      const send = $("chatbot-send");
+
+      if(!btn || !box || !msgWrap || !input || !send) return;
+
+      function add(text, who){
+        const d = document.createElement("div");
+        d.className = "msg " + (who === "user" ? "user" : "bot");
+        d.textContent = text;
+        msgWrap.appendChild(d);
+        msgWrap.scrollTop = msgWrap.scrollHeight;
+      }
+
+      function openClose(force){
+        if(force === true) box.style.display = "flex";
+        else if(force === false) box.style.display = "none";
+        else box.style.display = (box.style.display === "flex") ? "none" : "flex";
+
+        if(box.style.display === "flex" && msgWrap.children.length === 0){
+          add("Chào anh/chị. Tôi có thể hỗ trợ chọn hành trình theo sở thích, ngân sách và mức độ riêng tư.", "bot");
+        }
+      }
+
+      btn.addEventListener("click", ()=>openClose());
+      close?.addEventListener("click", ()=>openClose(false));
+
+      async function sendMsg(){
+        const text = input.value.trim();
+        if(!text) return;
+        add(text, "user");
+        input.value = "";
+
+        // Try /chatbot endpoint, if fail → fallback message
+        try{
+          const res = await fetch("/chatbot", {
+            method:"POST",
+            headers:{ "Content-Type":"application/json" },
+            body: JSON.stringify({ message: text })
+          });
+          const data = await res.json().catch(()=> ({}));
+          add(data.reply || "Tôi đã nhận câu hỏi. Anh/chị cho tôi biết điểm đến yêu thích và thời lượng dự kiến nhé.", "bot");
+        }catch(e){
+          add("Hiện chatbot chưa kết nối server. Anh/chị để lại số điện thoại ở form ‘Đặt lịch’, concierge sẽ gọi ngay.", "bot");
+        }
+      }
+
+      send.addEventListener("click", sendMsg);
+      input.addEventListener("keydown", (e)=>{ if(e.key==="Enter") sendMsg(); });
+    }
+
+    // =========================
+    // 7) Boot
+    // =========================
+    (async function boot(){
+      try{
+        setupUI();
+        setupBooking();
+        setupChat();
+
+        // render immediate fallback first (no blank)
+        renderAll(DEFAULT_DATA);
+
+        // then load real content if exists
+        const data = await fetchContent();
+        if(data){
+          // normalize: your backend /content may use hero.actions.primary/secondary
+          // admin page might output hero.cta_primary/cta_secondary - we map if needed
+          if(data.hero){
+            // map old keys if present
+            if(!data.hero.actions){
+              data.hero.actions = {};
+              if(data.hero.cta_primary) data.hero.actions.primary = data.hero.cta_primary;
+              if(data.hero.cta_secondary) data.hero.actions.secondary = data.hero.cta_secondary;
+            }
+            if(data.hero.card){
+              // allow card.desc1/desc2 naming variants
+              if(data.hero.card.desc1 == null && data.hero.card.desc) data.hero.card.desc1 = data.hero.card.desc;
+              if(data.hero.card.desc2 == null && data.hero.card.descB) data.hero.card.desc2 = data.hero.card.descB;
+            }
+          }
+          renderAll(Object.assign({}, DEFAULT_DATA, data));
+          toast("Đã tải nội dung từ hệ thống.");
+        }else{
+          toast("Đang dùng nội dung mặc định (không tải được /content).");
+        }
+      }catch(e){
+        // last resort: never break UI
+        renderAll(DEFAULT_DATA);
+      }
+    })();
+  </script>
 
 </body>
 </html>
