@@ -2,145 +2,141 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Luxury Travel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --gold:#c5a46d;
-      --dark:#111;
-      --gray:#f4f4f6;
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Montserrat, sans-serif;
-      background:#fff;
-      color:#111;
-    }
-    header{
-      position:fixed;
-      top:0;left:0;right:0;
-      background:rgba(0,0,0,.75);
-      backdrop-filter: blur(6px);
-      z-index:10;
-    }
-    .nav{
-      max-width:1200px;
-      margin:auto;
-      padding:14px 20px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
-    .logo{
-      font-family:"Playfair Display";
-      color:var(--gold);
-      font-size:22px;
-    }
-    nav a{
-      color:#fff;
-      margin-left:22px;
-      text-decoration:none;
-      font-size:14px;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #111;
+      color: #eee;
     }
 
-    .hero{
-      height:100vh;
-      background-size:cover;
-      background-position:center;
-      position:relative;
-      display:flex;
-      align-items:center;
+    /* ===== NAV ===== */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 64px;
+      background: rgba(0,0,0,.85);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      z-index: 10;
     }
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,.45);
+    header .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: #c9a45c;
     }
-    .hero-inner{
-      position:relative;
-      max-width:1200px;
-      margin:auto;
-      padding:0 20px;
-      display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:40px;
-      color:#fff;
-    }
-    .badge{
-      display:inline-block;
-      background:rgba(255,255,255,.15);
-      padding:6px 14px;
-      border-radius:999px;
-      font-size:12px;
-      letter-spacing:2px;
-      margin-bottom:16px;
-    }
-    h1{
-      font-family:"Playfair Display";
-      font-size:44px;
-      margin:0 0 14px;
-    }
-    .hero p{opacity:.95}
-    .hero-actions{margin-top:22px}
-    .btn{
-      padding:12px 26px;
-      border-radius:999px;
-      border:none;
-      font-weight:600;
-      cursor:pointer;
-    }
-    .btn-main{background:var(--gold)}
-    .btn-ghost{
-      background:transparent;
-      border:1px solid rgba(255,255,255,.6);
-      color:#fff;
-      margin-left:12px;
-    }
-    .hero-card{
-      background:rgba(0,0,0,.55);
-      border-radius:16px;
-      padding:22px;
+    nav a {
+      margin-left: 24px;
+      color: #ddd;
+      text-decoration: none;
+      font-size: 14px;
     }
 
-    section{
-      padding:90px 20px;
+    /* ===== HERO ===== */
+    #hero {
+      min-height: 100vh;
+      padding-top: 64px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
     }
-    .container{
-      max-width:1200px;
-      margin:auto;
+    #hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.6), rgba(0,0,0,.3));
     }
-    .section-title{
-      text-align:center;
-      margin-bottom:40px;
+    .hero-inner {
+      position: relative;
+      max-width: 1200px;
+      margin: auto;
+      padding: 120px 32px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
     }
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:26px;
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background: rgba(201,164,92,.15);
+      color: #c9a45c;
+      font-size: 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
     }
-    .card{
-      background:#fff;
-      border-radius:16px;
-      overflow:hidden;
-      box-shadow:0 8px 24px rgba(0,0,0,.08);
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      margin-bottom: 20px;
     }
-    .card img{
-      width:100%;
-      height:200px;
-      object-fit:cover;
+    .subtitle {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #ccc;
+      margin-bottom: 32px;
     }
-    .card-body{padding:18px}
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 28px;
+      background: #c9a45c;
+      color: #111;
+      text-decoration: none;
+      font-weight: 500;
+      margin-right: 12px;
+    }
+    .btn.secondary {
+      background: transparent;
+      border: 1px solid #c9a45c;
+      color: #c9a45c;
+    }
 
-    footer{
-      background:#111;
-      color:#aaa;
-      padding:40px 20px;
-      text-align:center;
+    .hero-card {
+      background: rgba(0,0,0,.6);
+      border-radius: 20px;
+      padding: 28px;
+    }
+    .hero-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: #c9a45c;
+      margin-bottom: 12px;
+    }
+    .hero-card p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 60px 32px;
+      background: #0b0b0b;
+      text-align: center;
+    }
+    footer h3 {
+      font-family: 'Playfair Display', serif;
+      color: #c9a45c;
+      margin-bottom: 12px;
+    }
+    footer p {
+      color: #888;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+      }
+      h1 { font-size: 40px; }
     }
   </style>
 </head>
@@ -148,113 +144,90 @@
 <body>
 
 <header>
-  <div class="nav">
-    <div class="logo" id="logoText">Luxury Travel</div>
-    <nav id="navMenu"></nav>
-  </div>
+  <div class="logo">Luxury Travel</div>
+  <nav id="navMenu"></nav>
 </header>
 
-<section class="hero" id="heroSection">
+<section id="hero">
   <div class="hero-inner">
     <div>
-      <div class="badge" id="heroBadge">SIGNATURE</div>
-      <h1 id="heroTitle">Luxury Journey</h1>
-      <p id="heroSubtitle"></p>
-      <div class="hero-actions">
-        <button class="btn btn-main" id="heroBtnPrimary"></button>
-        <button class="btn btn-ghost" id="heroBtnSecondary"></button>
-      </div>
+      <span class="badge" id="heroBadge">SIGNATURE EXPERIENCE</span>
+      <h1 id="heroTitle">Hành trình tinh tế</h1>
+      <p class="subtitle" id="heroSubtitle">
+        Trải nghiệm du lịch riêng tư, được thiết kế cho cảm xúc và chiều sâu.
+      </p>
+      <a href="#contact" class="btn" id="heroBtnPrimary">Đặt tư vấn 1:1</a>
+      <a href="#journey" class="btn secondary" id="heroBtnSecondary">Xem hành trình</a>
     </div>
-    <div class="hero-card">
-      <h3 id="heroCardTitle"></h3>
-      <p id="heroCardDesc1"></p>
-      <p id="heroCardDesc2"></p>
-    </div>
-  </div>
-</section>
 
-<section id="destinations">
-  <div class="container">
-    <div class="section-title">
-      <h2>Điểm đến nổi bật</h2>
+    <div class="hero-card">
+      <h3 id="heroCardTitle">Private Concierge 24/7</h3>
+      <p id="heroCardDesc1">Một người đồng hành xuyên suốt hành trình.</p>
+      <p id="heroCardDesc2">Ưu tiên sự riêng tư, tinh tế và an toàn.</p>
     </div>
-    <div class="cards" id="destList"></div>
   </div>
 </section>
 
 <footer>
   <h3 id="footerTitle">Luxury Travel</h3>
-  <p id="footerDesc"></p>
-  <p id="footerCopy"></p>
+  <p id="footerDesc">Thiết kế hành trình riêng – chuẩn mực riêng.</p>
+  <p id="footerCopy">© 2025 Luxury Travel</p>
 </footer>
 
 <script>
 async function loadContent() {
-  const res = await fetch("/content");
-  const d = await res.json();
+  try {
+    // ===== DOM =====
+    const hero = document.getElementById("hero");
+    const heroBadge = document.getElementById("heroBadge");
+    const heroTitle = document.getElementById("heroTitle");
+    const heroSubtitle = document.getElementById("heroSubtitle");
+    const heroBtnPrimary = document.getElementById("heroBtnPrimary");
+    const heroBtnSecondary = document.getElementById("heroBtnSecondary");
+    const heroCardTitle = document.getElementById("heroCardTitle");
+    const heroCardDesc1 = document.getElementById("heroCardDesc1");
+    const heroCardDesc2 = document.getElementById("heroCardDesc2");
+    const navMenu = document.getElementById("navMenu");
+    const footerTitle = document.getElementById("footerTitle");
+    const footerDesc = document.getElementById("footerDesc");
+    const footerCopy = document.getElementById("footerCopy");
 
-  // ===== DOM ELEMENTS =====
-  const hero = document.getElementById("heroSection");
-  const heroBadge = document.getElementById("heroBadge");
-  const heroTitle = document.getElementById("heroTitle");
-  const heroSubtitle = document.getElementById("heroSubtitle");
-  const heroBtnPrimary = document.getElementById("heroBtnPrimary");
-  const heroBtnSecondary = document.getElementById("heroBtnSecondary");
-  const heroCardTitle = document.getElementById("heroCardTitle");
-  const heroCardDesc1 = document.getElementById("heroCardDesc1");
-  const heroCardDesc2 = document.getElementById("heroCardDesc2");
+    // ===== FETCH CONTENT =====
+    const res = await fetch("https://luxury-backend-iu71.onrender.com/content");
+    const d = await res.json();
 
-  const logoText = document.getElementById("logoText");
-  const navMenu = document.getElementById("navMenu");
-  const destList = document.getElementById("destList");
+    // ===== NAV =====
+    navMenu.innerHTML = "";
+    (d.nav || []).forEach(n => {
+      const a = document.createElement("a");
+      a.href = n.href;
+      a.textContent = n.label;
+      navMenu.appendChild(a);
+    });
 
-  const footerTitle = document.getElementById("footerTitle");
-  const footerDesc = document.getElementById("footerDesc");
-  const footerCopy = document.getElementById("footerCopy");
+    // ===== HERO =====
+    hero.style.backgroundImage = `url('${d.hero.background}')`;
+    heroBadge.textContent = d.hero.badge;
+    heroTitle.textContent = d.hero.title;
+    heroSubtitle.textContent = d.hero.subtitle;
+    heroBtnPrimary.textContent = d.hero.actions.primary;
+    heroBtnSecondary.textContent = d.hero.actions.secondary;
+    heroCardTitle.textContent = d.hero.card.title;
+    heroCardDesc1.textContent = d.hero.card.desc1;
+    heroCardDesc2.textContent = d.hero.card.desc2;
 
-  // ===== HEADER =====
-  logoText.textContent = d.logo;
+    // ===== FOOTER =====
+    footerTitle.textContent = d.footer.title;
+    footerDesc.textContent = d.footer.desc;
+    footerCopy.textContent = d.footer.copyright;
 
-  navMenu.innerHTML = "";
-  d.nav.forEach(n => {
-    const a = document.createElement("a");
-    a.href = n.href;
-    a.textContent = n.label;
-    navMenu.appendChild(a);
-  });
-
-  // ===== HERO =====
-  hero.style.backgroundImage = `url('${d.hero.background}')`;
-  heroBadge.textContent = d.hero.badge;
-  heroTitle.textContent = d.hero.title;
-  heroSubtitle.textContent = d.hero.subtitle;
-  heroBtnPrimary.textContent = d.hero.actions.primary;
-  heroBtnSecondary.textContent = d.hero.actions.secondary;
-  heroCardTitle.textContent = d.hero.card.title;
-  heroCardDesc1.textContent = d.hero.card.desc1;
-  heroCardDesc2.textContent = d.hero.card.desc2;
-
-  // ===== DESTINATIONS =====
-  destList.innerHTML = "";
-  d.destinations.forEach(i => {
-    destList.innerHTML += `
-      <div class="card">
-        <img src="${i.img}">
-        <div class="card-body">
-          <h3>${i.title}</h3>
-          <p>${i.desc}</p>
-        </div>
-      </div>`;
-  });
-
-  // ===== FOOTER =====
-  footerTitle.textContent = d.footer.title;
-  footerDesc.textContent = d.footer.desc;
-  footerCopy.textContent = d.footer.copyright;
+  } catch (err) {
+    console.error("LOAD CONTENT ERROR:", err);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", loadContent);
 </script>
+
 </body>
 </html>
-
