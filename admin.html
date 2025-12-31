@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Luxury Travel – Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      font-family: system-ui, sans-serif;
+      background:#f4f5f8;
+      margin:0;
+      padding:30px;
+    }
+    .wrap{
+      max-width:900px;
+      margin:auto;
+      background:#fff;
+      padding:30px;
+      border-radius:14px;
+      box-shadow:0 10px 30px rgba(0,0,0,.1);
+    }
+    h2{margin-top:0}
+    .group{margin-bottom:28px}
+    label{display:block;font-weight:600;margin-bottom:6px}
+    input, textarea{
+      width:100%;
+      padding:10px;
+      border-radius:8px;
+      border:1px solid #ccc;
+      font-size:14px;
+    }
+    textarea{min-height:80px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .btn{
+      background:#c5a46d;
+      border:none;
+      padding:12px 26px;
+      border-radius:999px;
+      font-weight:600;
+      cursor:pointer;
+    }
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:20px;
+    }
+    .pw{max-width:240px}
+    hr{border:none;border-top:1px solid #eee;margin:30px 0}
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <div class="topbar">
+    <h2>Luxury Travel – Admin</h2>
+    <input class="pw" id="pw" type="password" placeholder="Password quản trị">
+  </div>
+
+  <!-- HERO -->
+  <div class="group">
+    <h3>Hero (Trang đầu)</h3>
+    <label>Badge</label>
+    <input id="heroBadge">
+
+    <label>Tiêu đề</label>
+    <input id="heroTitle">
+
+    <label>Mô tả</label>
+    <textarea id="heroSubtitle"></textarea>
+
+    <div class="row">
+      <div>
+        <label>Nút chính</label>
+        <input id="heroCta1">
+      </div>
+      <div>
+        <label>Nút phụ</label>
+        <input id="heroCta2">
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- SERVICES -->
+  <div class="group">
+    <h3>Dịch vụ (2 mục)</h3>
+
+    <label>Dịch vụ 1 – Tên</label>
+    <input id="svc1Title">
+    <label>Dịch vụ 1 – Mô tả</label>
+    <textarea id="svc1Desc"></textarea>
+
+    <label>Dịch vụ 2 – Tên</label>
+    <input id="svc2Title">
+    <label>Dịch vụ 2 – Mô tả</label>
+    <textarea id="svc2Desc"></textarea>
+  </div>
+
+  <hr>
+
+  <button class="btn" onclick="save()">💾 Lưu thay đổi</button>
+
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
