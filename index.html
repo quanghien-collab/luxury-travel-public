@@ -2,110 +2,122 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title id="seoTitle">Luxury Travel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luxury Travel</title>
 
-  <!-- SEO -->
-  <meta id="seoDesc" name="description" content="" />
-  <meta name="keywords" content="luxury travel, private journey, concierge travel" />
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --gold:#c5a46d;
-      --dark:#0f1014;
-      --dark-soft:#1b1d25;
-      --white:#fff;
+      --dark:#111;
+      --gray:#f4f4f6;
     }
     *{box-sizing:border-box}
     body{
       margin:0;
       font-family:Montserrat, sans-serif;
-      background:#f6f6f9;
-      color:#222;
+      background:#fff;
+      color:#111;
     }
-    h1,h2,h3{
-      font-family:"Playfair Display", serif;
-      margin:0 0 12px;
-    }
-    section{padding:90px 0}
-    .container{max-width:1200px;margin:auto;padding:0 20px}
-
-    /* HEADER */
     header{
-      position:fixed;top:0;left:0;width:100%;
-      background:rgba(15,16,20,.9);
-      z-index:1000;
+      position:fixed;
+      top:0;left:0;right:0;
+      background:rgba(0,0,0,.75);
+      backdrop-filter: blur(6px);
+      z-index:10;
     }
-    .header-inner{
-      max-width:1200px;margin:auto;
+    .nav{
+      max-width:1200px;
+      margin:auto;
       padding:14px 20px;
-      display:flex;align-items:center;justify-content:space-between;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
-    .logo{color:var(--gold);font-weight:600;font-size:22px}
+    .logo{
+      font-family:"Playfair Display";
+      color:var(--gold);
+      font-size:22px;
+    }
     nav a{
-      color:#ddd;text-decoration:none;margin-left:26px;font-size:14px
+      color:#fff;
+      margin-left:22px;
+      text-decoration:none;
+      font-size:14px;
     }
 
-    /* HERO */
     .hero{
       height:100vh;
-      display:flex;
-      align-items:center;
-      color:#fff;
       background-size:cover;
       background-position:center;
       position:relative;
+      display:flex;
+      align-items:center;
     }
     .hero::after{
-      content:"";position:absolute;inset:0;
-      background:rgba(0,0,0,.55);
+      content:"";
+      position:absolute;
+      inset:0;
+      background:rgba(0,0,0,.45);
     }
-    .hero-content{
+    .hero-inner{
       position:relative;
-      max-width:1100px;
+      max-width:1200px;
       margin:auto;
       padding:0 20px;
       display:grid;
       grid-template-columns:1.2fr .8fr;
       gap:40px;
+      color:#fff;
     }
     .badge{
       display:inline-block;
+      background:rgba(255,255,255,.15);
       padding:6px 14px;
       border-radius:999px;
-      background:rgba(255,255,255,.15);
-      letter-spacing:2px;
       font-size:12px;
-      margin-bottom:18px;
+      letter-spacing:2px;
+      margin-bottom:16px;
     }
-    .hero p{color:#eee;max-width:520px}
-    .actions{margin-top:26px}
+    h1{
+      font-family:"Playfair Display";
+      font-size:44px;
+      margin:0 0 14px;
+    }
+    .hero p{opacity:.95}
+    .hero-actions{margin-top:22px}
     .btn{
-      padding:12px 28px;
+      padding:12px 26px;
       border-radius:999px;
       border:none;
       font-weight:600;
       cursor:pointer;
-      margin-right:10px;
     }
     .btn-main{background:var(--gold)}
     .btn-ghost{
       background:transparent;
+      border:1px solid rgba(255,255,255,.6);
       color:#fff;
-      border:1px solid rgba(255,255,255,.5)
+      margin-left:12px;
     }
     .hero-card{
-      background:rgba(0,0,0,.6);
-      border-radius:18px;
-      padding:26px;
+      background:rgba(0,0,0,.55);
+      border-radius:16px;
+      padding:22px;
     }
-    .hero-card h3{color:var(--gold)}
 
-    /* SECTIONS */
-    .section-title{text-align:center;margin-bottom:40px}
+    section{
+      padding:90px 20px;
+    }
+    .container{
+      max-width:1200px;
+      margin:auto;
+    }
+    .section-title{
+      text-align:center;
+      margin-bottom:40px;
+    }
     .cards{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -113,17 +125,20 @@
     }
     .card{
       background:#fff;
-      border-radius:18px;
+      border-radius:16px;
       overflow:hidden;
-      box-shadow:0 6px 20px rgba(0,0,0,.1)
+      box-shadow:0 8px 24px rgba(0,0,0,.08);
     }
-    .card img{width:100%;height:210px;object-fit:cover}
+    .card img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+    }
     .card-body{padding:18px}
 
-    /* FOOTER */
     footer{
-      background:var(--dark);
-      color:#ccc;
+      background:#111;
+      color:#aaa;
       padding:40px 20px;
       text-align:center;
     }
@@ -133,19 +148,19 @@
 <body>
 
 <header>
-  <div class="header-inner">
-    <div class="logo" id="logoText"></div>
+  <div class="nav">
+    <div class="logo" id="logoText">Luxury Travel</div>
     <nav id="navMenu"></nav>
   </div>
 </header>
 
 <section class="hero" id="heroSection">
-  <div class="hero-content">
+  <div class="hero-inner">
     <div>
-      <div class="badge" id="heroBadge"></div>
-      <h1 id="heroTitle"></h1>
+      <div class="badge" id="heroBadge">SIGNATURE</div>
+      <h1 id="heroTitle">Luxury Journey</h1>
       <p id="heroSubtitle"></p>
-      <div class="actions">
+      <div class="hero-actions">
         <button class="btn btn-main" id="heroBtnPrimary"></button>
         <button class="btn btn-ghost" id="heroBtnSecondary"></button>
       </div>
@@ -153,7 +168,7 @@
     <div class="hero-card">
       <h3 id="heroCardTitle"></h3>
       <p id="heroCardDesc1"></p>
-      <p><strong id="heroCardDesc2"></strong></p>
+      <p id="heroCardDesc2"></p>
     </div>
   </div>
 </section>
@@ -161,24 +176,14 @@
 <section id="destinations">
   <div class="container">
     <div class="section-title">
-      <h2 id="destTitle"></h2>
-      <p id="destDesc"></p>
+      <h2>Điểm đến nổi bật</h2>
     </div>
     <div class="cards" id="destList"></div>
   </div>
 </section>
 
-<section id="services" style="background:#f0f1f6">
-  <div class="container">
-    <div class="section-title">
-      <h2 id="serviceTitle"></h2>
-    </div>
-    <div class="cards" id="serviceList"></div>
-  </div>
-</section>
-
 <footer>
-  <h3 id="footerTitle"></h3>
+  <h3 id="footerTitle">Luxury Travel</h3>
   <p id="footerDesc"></p>
   <p id="footerCopy"></p>
 </footer>
@@ -188,37 +193,33 @@ async function loadContent(){
   const res = await fetch("/content");
   const d = await res.json();
 
-  document.getElementById("seoTitle").innerText = d.seo?.title || "Luxury Travel";
-  document.getElementById("seoDesc").content = d.seo?.description || "";
-
-  document.getElementById("logoText").innerText = d.logo || "";
+  document.getElementById("logoText").textContent = d.logo;
 
   const nav = document.getElementById("navMenu");
   nav.innerHTML="";
-  d.nav?.forEach(n=>{
+  d.nav.forEach(n=>{
     const a=document.createElement("a");
-    a.href=n.href;a.innerText=n.label;
+    a.href=n.href;
+    a.textContent=n.label;
     nav.appendChild(a);
   });
 
-  const hero = document.getElementById("heroSection");
-  hero.style.backgroundImage =
-    `url('${d.hero.background}')`;
+  const hero=document.getElementById("heroSection");
+  hero.style.backgroundImage=`url('${d.hero.background}')`;
 
-  heroBadge.innerText = d.hero.badge;
-  heroTitle.innerText = d.hero.title;
-  heroSubtitle.innerText = d.hero.subtitle;
-  heroBtnPrimary.innerText = d.hero.actions.primary;
-  heroBtnSecondary.innerText = d.hero.actions.secondary;
-  heroCardTitle.innerText = d.hero.card.title;
-  heroCardDesc1.innerText = d.hero.card.desc1;
-  heroCardDesc2.innerText = d.hero.card.desc2;
+  heroBadge.textContent=d.hero.badge;
+  heroTitle.textContent=d.hero.title;
+  heroSubtitle.textContent=d.hero.subtitle;
+  heroBtnPrimary.textContent=d.hero.actions.primary;
+  heroBtnSecondary.textContent=d.hero.actions.secondary;
+  heroCardTitle.textContent=d.hero.card.title;
+  heroCardDesc1.textContent=d.hero.card.desc1;
+  heroCardDesc2.textContent=d.hero.card.desc2;
 
-  destTitle.innerText = d.destinationsTitle || "";
-  destDesc.innerText = d.destinationsDesc || "";
-  destList.innerHTML="";
-  d.destinations?.forEach(i=>{
-    destList.innerHTML+=`
+  const dest=document.getElementById("destList");
+  dest.innerHTML="";
+  d.destinations.forEach(i=>{
+    dest.innerHTML+=`
       <div class="card">
         <img src="${i.img}">
         <div class="card-body">
@@ -228,22 +229,11 @@ async function loadContent(){
       </div>`;
   });
 
-  serviceTitle.innerText = d.servicesTitle || "";
-  serviceList.innerHTML="";
-  d.services?.forEach(s=>{
-    serviceList.innerHTML+=`
-      <div class="card">
-        <div class="card-body">
-          <h3>${s.icon} ${s.title}</h3>
-          <p>${s.desc}</p>
-        </div>
-      </div>`;
-  });
-
-  footerTitle.innerText = d.footer.title;
-  footerDesc.innerText = d.footer.desc;
-  footerCopy.innerText = d.footer.copyright;
+  footerTitle.textContent=d.footer.title;
+  footerDesc.textContent=d.footer.desc;
+  footerCopy.textContent=d.footer.copyright;
 }
+
 document.addEventListener("DOMContentLoaded",loadContent);
 </script>
 
