@@ -1,0 +1,121 @@
+{
+  "about": {
+    "desc1": "Mỗi chuyến đi được xây dựng dựa trên nhịp sống, sở thích và mức độ riêng tư mà khách hàng mong muốn. Không ghép đoàn, không phải xoay theo lịch trình cứng nhắc.",
+    "desc2": "Đội ngũ concierge theo sát trước – trong – sau hành trình, xử lý mọi thay đổi chỉ qua một tin nhắn: nhà hàng, vé máy bay, lịch spa, golf, trải nghiệm bản địa...",
+    "desc3": "Ưu tiên: Sự kín đáo, bảo mật thông tin và cảm xúc trọn vẹn cho gia đình.",
+    "title": "Hành trình được thiết kế cho từng người, không theo “tour mẫu”."
+  },
+  "destinations": [
+    {
+      "desc": "Vịnh Hạ Long là biểu tượng du lịch của Việt Nam, nổi tiếng với hàng nghìn đảo đá vôi kỳ vĩ giữa làn nước xanh ngọc. Không gian nơi đây mang vẻ đẹp hùng tráng nhưng thanh bình, lý tưởng cho các hành trình nghỉ dưỡng cao cấp, du thuyền sang trọng và trải nghiệm thiên nhiên đẳng cấp quốc tế.\nVịnh Hạ Long phù hợp với gia đình, doanh nhân và du khách quốc tế mong muốn khám phá một Việt Nam vừa nguyên sơ vừa tinh tế.",
+      "img": "/uploads/down2load.jpg",
+      "title": "Vịnh Hạ Long – Kỳ quan thiên nhiên thế giới"
+    },
+    {
+      "desc": "Hội An mang vẻ đẹp trầm mặc, cổ kính với những ngôi nhà vàng, đèn lồng rực rỡ và nhịp sống chậm rãi hiếm có. Đây là điểm đến lý tưởng cho du khách yêu văn hóa, lịch sử và những trải nghiệm tinh tế mang đậm bản sắc Việt Nam.\nHội An đặc biệt phù hợp cho các chuyến nghỉ dưỡng nhẹ nhàng, du lịch gia đình và hành trình trải nghiệm dành cho du khách quốc tế.",
+      "img": "/uploads/d23ownload_1.jpg",
+      "title": "Phố cổ Hội An – Di sản văn hóa thế giới"
+    },
+    {
+      "desc": "Quần thể danh thắng Tràng An là sự hòa quyện hoàn hảo giữa núi đá vôi, sông nước và hệ thống hang động kỳ ảo. Ngồi thuyền lướt nhẹ trên dòng nước trong xanh, du khách cảm nhận trọn vẹn vẻ đẹp thanh tịnh, sâu lắng của thiên nhiên và lịch sử Việt Nam.\nTràng An phù hợp cho du lịch sinh thái cao cấp và những chuyến đi tìm lại sự an yên.",
+      "img": "/uploads/Du-lich-Trang-An-Ninh-Binh-1.jpg",
+      "title": "Tràng An – Ninh Bình, tuyệt tác non nước hữu tình"
+    },
+    {
+      "desc": "Sa Pa quyến rũ với ruộng bậc thang, núi non trùng điệp và bản làng vùng cao đầy bản sắc. Khí hậu mát mẻ quanh năm cùng cảnh sắc hùng vĩ khiến Sa Pa trở thành điểm đến lý tưởng cho nghỉ dưỡng núi cao, trải nghiệm văn hóa và du lịch gia đình cao cấp.",
+      "img": "/uploads/imag11s.jpg",
+      "title": "Sa Pa – Chạm mây giữa núi rừng Tây Bắc"
+    },
+    {
+      "desc": "Đà Lạt mang vẻ đẹp lãng mạn với rừng thông, hồ nước và khí hậu mát lành quanh năm. Không gian yên bình, kiến trúc Pháp cổ cùng nhịp sống chậm rãi khiến nơi đây trở thành điểm đến lý tưởng cho nghỉ dưỡng cao cấp, du lịch gia đình và các hành trình tái tạo năng lượng.",
+      "img": "/uploads/ima123123ges.jpg",
+      "title": "Đà Lạt – Thành phố của sương và cảm xúc"
+    },
+    {
+      "desc": "Huế là nơi hội tụ chiều sâu lịch sử, kiến trúc cung đình và vẻ đẹp thơ mộng của sông Hương, núi Ngự. Không gian thanh tĩnh, cổ kính mang đến trải nghiệm văn hóa tinh tế, phù hợp với du khách yêu lịch sử và những hành trình khám phá giàu chiều sâu.",
+      "img": "/uploads/imag123123123s.jpg",
+      "title": "Huế – Di sản cố đô trầm mặc"
+    },
+    {
+      "desc": "Phú Quốc nổi bật với biển xanh, cát trắng và hệ sinh thái nghỉ dưỡng đẳng cấp quốc tế. Đây là điểm đến lý tưởng cho kỳ nghỉ gia đình, trăng mật và các chuyến du lịch cao cấp, kết hợp hoàn hảo giữa thiên nhiên hoang sơ và dịch vụ sang trọn",
+      "img": "/uploads/phu-quoc-thien-duong-nghi-duong-mien-nhiet-doi-pvixkate.jpeg",
+      "title": "Phú Quốc – Thiên đường nghỉ dưỡng nhiệt đới"
+    },
+    {
+      "desc": "Hà Giang gây ấn tượng mạnh với cao nguyên đá, đèo núi ngoạn mục và bản sắc văn hóa vùng cao độc đáo. Đây là điểm đến dành cho những ai yêu thiên nhiên nguyên bản, trải nghiệm sâu và hành trình khám phá mang dấu ấn cá nhân.",
+      "img": "/uploads/im3123123123ages.jpg",
+      "title": "Hà Giang – Vẻ đẹp hùng vĩ nơi cực Bắc"
+    }
+  ],
+  "enabled": {
+    "about": true,
+    "booking": true,
+    "destinations": true,
+    "footer": true,
+    "gallery": true,
+    "hero": true,
+    "services": true
+  },
+  "font": "Playfair Display",
+  "footer": {
+    "copyright": "© 2025 Luxury Travel. All Rights Reserved.",
+    "desc": "Hành trình tinh tế – dành riêng cho những người bận rộn nhưng vẫn muốn sống trọn từng khoảnh khắc.",
+    "title": "Luxury Travel"
+  },
+  "gallery": [
+    "/uploads/download_4.jpg",
+    "/uploads/download.jpg",
+    "/uploads/download_1.jpg",
+    "/uploads/download_3.jpg",
+    "/uploads/photo-10-17117299656371877938905-1711786225974-1711786226185159631658.webp"
+  ],
+  "hero": {
+    "actions": {
+      "primary": "Đặt tư vấn 1:1",
+      "secondary": "Xem điểm đến gợi ý"
+    },
+    "background": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+    "badge": "SIGNATURE JOURNEY",
+    "card": {
+      "desc1": "Theo sát từ khâu đặt vé, khách sạn, trải nghiệm đến từng yêu cầu nhỏ nhất trên hành trình.",
+      "desc2": "Ưu tiên: Doanh nhân, gia đình cần không gian riêng tư & bảo mật.",
+      "title": "Private Concierge 24/7"
+    },
+    "subtitle": "Khách hàng chỉ cần chọn cảm hứng, còn lại để đội ngũ concierge thiết kế lịch trình riêng tư, sang trọng, đúng nhịp sống của gia đình.",
+    "title": "Hành trình tinh tế – chuẩn giới hạn"
+  },
+  "logo": "Luxury Travel",
+  "nav": [
+    "Điểm đến ",
+    "Dịch vụ",
+    "Về chúng tôi",
+    "Đặt hành trình",
+    "Liên hệ",
+    {
+      "href": "#help",
+      "label": ""
+    }
+  ],
+  "services": [
+    {
+      "desc": "Sắp xếp chuyên cơ riêng hoặc hạng thương gia tốt nhất, tối ưu thời gian di chuyển, thủ tục ưu tiên và phòng chờ riêng.",
+      "icon": "✈️",
+      "title": "Private Jet & Business Class"
+    },
+    {
+      "desc": "Du thuyền hạng sang cho gia đình và đối tác – không gian lý tưởng để vừa nghỉ ngơi, vừa trao đổi công việc nhẹ nhàng.",
+      "icon": "🛥",
+      "title": "Luxury Cruise & Yacht"
+    },
+    {
+      "desc": "Chương trình detox, thiền, yoga, trị liệu cá nhân tại resort 5–6 sao, giúp nạp lại năng lượng sau những giai đoạn làm việc căng thẳng.",
+      "icon": "🌿",
+      "title": "Wellness & Retreat"
+    }
+  ],
+  "theme": {
+    "background": "#f6f6f9",
+    "dark": "#0f1014",
+    "gold": "#c5a46d"
+  }
+}
