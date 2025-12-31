@@ -1,298 +1,251 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luxury Travel – Signature Experiences</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="seoTitle">Luxury Travel</title>
 
-<!-- FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- SEO -->
+  <meta id="seoDesc" name="description" content="" />
+  <meta name="keywords" content="luxury travel, private journey, concierge travel" />
 
-<style>
-:root{
-  --gold:#c5a46d;
-  --gold-soft:#e5cfa1;
-  --dark:#0f1014;
-  --dark-glass:rgba(15,16,20,.65);
-  --white:#ffffff;
-}
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:"Montserrat",sans-serif;
-  background:#f6f7fb;
-  color:#111;
-}
+  <style>
+    :root{
+      --gold:#c5a46d;
+      --dark:#0f1014;
+      --dark-soft:#1b1d25;
+      --white:#fff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Montserrat, sans-serif;
+      background:#f6f6f9;
+      color:#222;
+    }
+    h1,h2,h3{
+      font-family:"Playfair Display", serif;
+      margin:0 0 12px;
+    }
+    section{padding:90px 0}
+    .container{max-width:1200px;margin:auto;padding:0 20px}
 
-/* HEADER */
-header{
-  position:fixed;
-  top:0;left:0;width:100%;
-  z-index:999;
-  background:rgba(15,16,20,.55);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-.header-inner{
-  max-width:1200px;
-  margin:auto;
-  padding:14px 24px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-.logo{
-  font-family:"Playfair Display",serif;
-  font-size:22px;
-  color:var(--gold);
-  letter-spacing:.5px;
-}
-nav a{
-  color:#fff;
-  text-decoration:none;
-  margin-left:28px;
-  font-size:14px;
-  opacity:.9;
-}
-nav a:hover{opacity:1}
+    /* HEADER */
+    header{
+      position:fixed;top:0;left:0;width:100%;
+      background:rgba(15,16,20,.9);
+      z-index:1000;
+    }
+    .header-inner{
+      max-width:1200px;margin:auto;
+      padding:14px 20px;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .logo{color:var(--gold);font-weight:600;font-size:22px}
+    nav a{
+      color:#ddd;text-decoration:none;margin-left:26px;font-size:14px
+    }
 
-/* HERO */
-.hero{
-  height:100vh;
-  background:
-    linear-gradient(to bottom,rgba(0,0,0,.45),rgba(0,0,0,.7)),
-    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e");
-  background-size:cover;
-  background-position:center;
-  display:flex;
-  align-items:center;
-}
-.hero-inner{
-  max-width:1200px;
-  margin:auto;
-  padding:0 24px;
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:60px;
-  align-items:center;
-}
-@media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr;gap:32px}
-}
+    /* HERO */
+    .hero{
+      height:100vh;
+      display:flex;
+      align-items:center;
+      color:#fff;
+      background-size:cover;
+      background-position:center;
+      position:relative;
+    }
+    .hero::after{
+      content:"";position:absolute;inset:0;
+      background:rgba(0,0,0,.55);
+    }
+    .hero-content{
+      position:relative;
+      max-width:1100px;
+      margin:auto;
+      padding:0 20px;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:40px;
+    }
+    .badge{
+      display:inline-block;
+      padding:6px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,.15);
+      letter-spacing:2px;
+      font-size:12px;
+      margin-bottom:18px;
+    }
+    .hero p{color:#eee;max-width:520px}
+    .actions{margin-top:26px}
+    .btn{
+      padding:12px 28px;
+      border-radius:999px;
+      border:none;
+      font-weight:600;
+      cursor:pointer;
+      margin-right:10px;
+    }
+    .btn-main{background:var(--gold)}
+    .btn-ghost{
+      background:transparent;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.5)
+    }
+    .hero-card{
+      background:rgba(0,0,0,.6);
+      border-radius:18px;
+      padding:26px;
+    }
+    .hero-card h3{color:var(--gold)}
 
-/* HERO TEXT */
-.hero-badge{
-  display:inline-block;
-  padding:8px 20px;
-  background:rgba(197,164,109,.18);
-  color:var(--gold-soft);
-  font-size:11px;
-  letter-spacing:3px;
-  border-radius:999px;
-  margin-bottom:18px;
-}
-.hero-text h1{
-  font-family:"Playfair Display",serif;
-  font-size:56px;
-  font-weight:600;
-  line-height:1.15;
-  color:#fff;
-  margin:0 0 18px;
-}
-.hero-text p{
-  font-size:15px;
-  color:#eee;
-  max-width:520px;
-  line-height:1.7;
-}
-.hero-actions{
-  margin-top:32px;
-}
-.hero-actions button{
-  padding:15px 38px;
-  border-radius:999px;
-  border:none;
-  background:var(--gold);
-  color:#111;
-  font-weight:600;
-  font-size:15px;
-  cursor:pointer;
-  box-shadow:0 8px 28px rgba(197,164,109,.35);
-}
+    /* SECTIONS */
+    .section-title{text-align:center;margin-bottom:40px}
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:26px;
+    }
+    .card{
+      background:#fff;
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 6px 20px rgba(0,0,0,.1)
+    }
+    .card img{width:100%;height:210px;object-fit:cover}
+    .card-body{padding:18px}
 
-/* CONCIERGE CARD */
-.hero-card{
-  background:var(--dark-glass);
-  backdrop-filter:blur(14px);
-  border-radius:20px;
-  padding:28px 30px;
-  color:#fff;
-  border:1px solid rgba(255,255,255,.08);
-}
-.hero-card h3{
-  font-family:"Playfair Display",serif;
-  font-size:22px;
-  margin:0 0 12px;
-  color:var(--gold-soft);
-}
-.hero-card p{
-  font-size:14px;
-  line-height:1.7;
-  color:#ddd;
-}
-
-/* SECTION */
-section{
-  padding:100px 24px;
-}
-.container{
-  max-width:1200px;
-  margin:auto;
-}
-.section-title{
-  text-align:center;
-  margin-bottom:60px;
-}
-.section-title span{
-  font-size:12px;
-  letter-spacing:3px;
-  color:#777;
-}
-.section-title h2{
-  font-family:"Playfair Display",serif;
-  font-size:36px;
-  margin:12px 0;
-}
-
-/* DESTINATIONS */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:28px;
-}
-.card{
-  background:#fff;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,.08);
-}
-.card img{
-  width:100%;
-  height:220px;
-  object-fit:cover;
-}
-.card-body{
-  padding:22px;
-}
-.card-body h3{
-  font-family:"Playfair Display",serif;
-  font-size:20px;
-  margin:0 0 8px;
-}
-.card-body p{
-  font-size:14px;
-  color:#555;
-  line-height:1.6;
-}
-
-/* FOOTER */
-footer{
-  background:#0f1014;
-  color:#aaa;
-  text-align:center;
-  padding:50px 24px;
-}
-footer h3{
-  font-family:"Playfair Display",serif;
-  color:var(--gold);
-  margin-bottom:8px;
-}
-footer p{font-size:13px}
-</style>
+    /* FOOTER */
+    footer{
+      background:var(--dark);
+      color:#ccc;
+      padding:40px 20px;
+      text-align:center;
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
   <div class="header-inner">
-    <div class="logo">Luxury Travel</div>
-    <nav>
-      <a href="#journeys">Hành trình</a>
-      <a href="#about">Triết lý</a>
-      <a href="#contact">Liên hệ</a>
-    </nav>
+    <div class="logo" id="logoText"></div>
+    <nav id="navMenu"></nav>
   </div>
 </header>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <div class="hero-badge">SIGNATURE EXPERIENCES</div>
-      <h1>Hành trình tinh tế<br>chuẩn mực riêng tư</h1>
-      <p>
-        Thiết kế trải nghiệm du lịch dành cho doanh nhân và gia đình
-        trân trọng thời gian, cảm xúc và sự kín đáo tuyệt đối.
-      </p>
-      <div class="hero-actions">
-        <button>Đặt cuộc trao đổi riêng</button>
+<section class="hero" id="heroSection">
+  <div class="hero-content">
+    <div>
+      <div class="badge" id="heroBadge"></div>
+      <h1 id="heroTitle"></h1>
+      <p id="heroSubtitle"></p>
+      <div class="actions">
+        <button class="btn btn-main" id="heroBtnPrimary"></button>
+        <button class="btn btn-ghost" id="heroBtnSecondary"></button>
       </div>
     </div>
-
     <div class="hero-card">
-      <h3>Private Concierge 24/7</h3>
-      <p>
-        Một người đồng hành duy nhất theo sát hành trình của bạn –
-        từ lúc hình thành ý tưởng cho đến khi trở về.
-      </p>
-      <p>
-        <strong>Ưu tiên:</strong> Doanh nhân, gia đình,
-        người cần không gian riêng tư và bảo mật.
-      </p>
+      <h3 id="heroCardTitle"></h3>
+      <p id="heroCardDesc1"></p>
+      <p><strong id="heroCardDesc2"></strong></p>
     </div>
   </div>
 </section>
 
-<section id="journeys">
+<section id="destinations">
   <div class="container">
     <div class="section-title">
-      <span>CURATED JOURNEYS</span>
-      <h2>Hành trình chọn lọc</h2>
+      <h2 id="destTitle"></h2>
+      <p id="destDesc"></p>
     </div>
-
-    <div class="cards">
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34">
-        <div class="card-body">
-          <h3>Maldives Private Villa</h3>
-          <p>Không gian biệt lập trên mặt biển, phục vụ cá nhân hoá tuyệt đối.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee">
-        <div class="card-body">
-          <h3>Kyoto Ancient Luxury</h3>
-          <p>Ryokan cổ, onsen riêng và nghệ thuật sống Nhật Bản tinh tế.</p>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7">
-        <div class="card-body">
-          <h3>Sa Pa Private Retreat</h3>
-          <p>Ẩn mình giữa núi rừng – nơi tái tạo năng lượng và chiều sâu.</p>
-        </div>
-      </div>
-    </div>
+    <div class="cards" id="destList"></div>
   </div>
 </section>
 
-<footer id="contact">
-  <h3>Luxury Travel</h3>
-  <p>Thiết kế hành trình dành cho những người không đi theo số đông.</p>
-  <p>© 2025 Luxury Travel</p>
+<section id="services" style="background:#f0f1f6">
+  <div class="container">
+    <div class="section-title">
+      <h2 id="serviceTitle"></h2>
+    </div>
+    <div class="cards" id="serviceList"></div>
+  </div>
+</section>
+
+<footer>
+  <h3 id="footerTitle"></h3>
+  <p id="footerDesc"></p>
+  <p id="footerCopy"></p>
 </footer>
+
+<script>
+async function loadContent(){
+  const res = await fetch("/content");
+  const d = await res.json();
+
+  document.getElementById("seoTitle").innerText = d.seo?.title || "Luxury Travel";
+  document.getElementById("seoDesc").content = d.seo?.description || "";
+
+  document.getElementById("logoText").innerText = d.logo || "";
+
+  const nav = document.getElementById("navMenu");
+  nav.innerHTML="";
+  d.nav?.forEach(n=>{
+    const a=document.createElement("a");
+    a.href=n.href;a.innerText=n.label;
+    nav.appendChild(a);
+  });
+
+  const hero = document.getElementById("heroSection");
+  hero.style.backgroundImage =
+    `url('${d.hero.background}')`;
+
+  heroBadge.innerText = d.hero.badge;
+  heroTitle.innerText = d.hero.title;
+  heroSubtitle.innerText = d.hero.subtitle;
+  heroBtnPrimary.innerText = d.hero.actions.primary;
+  heroBtnSecondary.innerText = d.hero.actions.secondary;
+  heroCardTitle.innerText = d.hero.card.title;
+  heroCardDesc1.innerText = d.hero.card.desc1;
+  heroCardDesc2.innerText = d.hero.card.desc2;
+
+  destTitle.innerText = d.destinationsTitle || "";
+  destDesc.innerText = d.destinationsDesc || "";
+  destList.innerHTML="";
+  d.destinations?.forEach(i=>{
+    destList.innerHTML+=`
+      <div class="card">
+        <img src="${i.img}">
+        <div class="card-body">
+          <h3>${i.title}</h3>
+          <p>${i.desc}</p>
+        </div>
+      </div>`;
+  });
+
+  serviceTitle.innerText = d.servicesTitle || "";
+  serviceList.innerHTML="";
+  d.services?.forEach(s=>{
+    serviceList.innerHTML+=`
+      <div class="card">
+        <div class="card-body">
+          <h3>${s.icon} ${s.title}</h3>
+          <p>${s.desc}</p>
+        </div>
+      </div>`;
+  });
+
+  footerTitle.innerText = d.footer.title;
+  footerDesc.innerText = d.footer.desc;
+  footerCopy.innerText = d.footer.copyright;
+}
+document.addEventListener("DOMContentLoaded",loadContent);
+</script>
 
 </body>
 </html>
